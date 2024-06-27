@@ -15,6 +15,9 @@ public class HomePage {
 
 	}
 
+	@FindBy(linkText = "Products")
+	private WebElement productslink;
+
 	@FindBy(linkText = "Organizations")
 	private WebElement orglink;
 
@@ -57,6 +60,10 @@ public class HomePage {
 		return signoutlink;
 	}
 
+	public WebElement getProductslink() {
+		return productslink;
+	}
+
 	// provide actions
 	public void navigateToCampaginPage() {
 		Actions act = new Actions(driver);
@@ -64,14 +71,12 @@ public class HomePage {
 
 		campaignslink.click();
 	}
-	
+
 	public void logout() {
 		Actions act = new Actions(driver);
 		act.moveToElement(adminImg).perform();
 
 		signoutlink.click();
-	}	
-		
 	}
 
-
+}
